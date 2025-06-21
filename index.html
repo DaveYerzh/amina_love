@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💕 Признание в любви Амине 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shine 3s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .heart {
+            font-size: 4rem;
+            color: #e74c3c;
+            margin-bottom: 20px;
+            animation: heartbeat 2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #34495e;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        .love-text {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .floating-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: #e74c3c;
+            font-size: 1.5rem;
+            animation: float 6s infinite linear;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(238, 90, 36, 0.3);
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .special-message {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            color: white;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+        }
+
+        .emoji {
+            font-size: 1.5rem;
+            margin: 0 5px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 40px 30px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .message {
+                font-size: 1.2rem;
+            }
+            
+            .heart {
+                font-size: 5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 50px 40px;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    
+    <div class="container">
+        <div class="heart">💕</div>
+        
+        <h1>Дорогая Амина</h1>
+        
+        <div class="message">
+            <p>Каждый день, когда я просыпаюсь, первая мысль о тебе.</p>
+            <p>Твоя улыбка освещает мой мир, а твой голос делает мой день особенным.</p>
+            <p class="love-text">Я влюблен в тебя всем сердцем! ❤️</p>
+        </div>
+        
+        <div class="special-message">
+            <p><span class="emoji">💝</span> Ты - самое прекрасное, что случилось в моей жизни</p>
+            <p><span class="emoji">🌟</span> С тобой я чувствую себя самым счастливым человеком</p>
+            <p><span class="emoji">💫</span> Хочу провести с тобой всю жизнь</p>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <button class="btn" onclick="showLove()">💖 Признаться в любви</button>
+            <button class="btn" onclick="showHearts()">💕 Отправить сердечки</button>
+        </div>
+    </div>
+
+    <script>
+        // Создание плавающих сердечек
+        function createFloatingHearts() {
+            const container = document.getElementById('floatingHearts');
+            const hearts = ['💕', '💖', '💗', '💓', '💝', '💘'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                container.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 6000);
+            }, 1000);
+        }
+
+        // Показать любовь
+        function showLove() {
+            const messages = [
+                'Я люблю тебя! 💕',
+                'Ты - мое счастье! 💖',
+                'Без тебя я не могу! 💗',
+                'Ты - мое вдохновение! 💓',
+                'Спасибо, что ты есть! 💝'
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            alert(randomMessage);
+            
+            // Создать взрыв сердечек
+            createHeartExplosion();
+        }
+
+        // Показать сердечки
+        function showHearts() {
+            createHeartExplosion();
+            setTimeout(() => {
+                alert('💕💖💗💓💝💘\nСердечки для тебя, Амина! 💕💖💗💓💝💘');
+            }, 500);
+        }
+
+        // Создать взрыв сердечек
+        function createHeartExplosion() {
+            const container = document.getElementById('floatingHearts');
+            const hearts = ['💕', '💖', '💗', '💓', '💝', '💘'];
+            
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'floating-heart';
+                    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    container.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 4000);
+                }, i * 100);
+            }
+        }
+
+        // Запустить анимацию плавающих сердечек
+        createFloatingHearts();
+
+        // Добавить эффект при клике на страницу
+        document.addEventListener('click', (e) => {
+            if (e.target.tagName !== 'BUTTON') {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.textContent = '💕';
+                heart.style.left = e.clientX + 'px';
+                heart.style.top = e.clientY + 'px';
+                heart.style.position = 'fixed';
+                heart.style.animationDuration = '2s';
+                document.body.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html> 
